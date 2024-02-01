@@ -51,5 +51,8 @@ export function canFreePrisoner(
   petDogIsPresent,
 ) {
 
-  return (petDogIsPresent && !archerIsAwake) || (!petDogIsPresent && prisonerIsAwake && !knightIsAwake && !archerIsAwake);
+  return (
+    (petDogIsPresent && !archerIsAwake) || 
+    (!petDogIsPresent && prisonerIsAwake && !knightIsAwake && !archerIsAwake)
+  );
 }
