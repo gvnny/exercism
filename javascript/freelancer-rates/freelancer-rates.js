@@ -16,7 +16,7 @@ export function dayRate(ratePerHour) {
  * @returns {number} the number of days
  */
 export function daysInBudget(budget, ratePerHour) {
-  return Math.floor(budget / ratePerHour / 8);
+  return Math.floor(budget / dayRate(ratePerHour));
 }
 
 /**
@@ -28,5 +28,10 @@ export function daysInBudget(budget, ratePerHour) {
  * @returns {number} the rounded up discounted rate
  */
 export function priceWithMonthlyDiscount(ratePerHour, numDays, discount) {
-  return Math.ceil((((numDays - (numDays % 22)) * dayRate(ratePerHour)) * (1 - discount))  + ((numDays % 22) * dayRate(ratePerHour)));
+  const fullPriceDays = numDays % 22;
+  const discountedValue = 1 - discount;
+  const monthlyDiscountedCalculation = (((numDays - fullPriceDays) * dayRate(ratePerHour)) * discountedValue);
+  const dailyUndiscountedCalculation = (fullPriceDays * dayRate(ratePerHour));
+
+  return Math.ceil(monthlyDiscountedCalculation + dailyUndiscountedCalculation);
 }
