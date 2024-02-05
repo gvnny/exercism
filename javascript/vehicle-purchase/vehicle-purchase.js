@@ -18,8 +18,8 @@ export function needsLicense(kind) {
  */
 export function chooseVehicle(option1, option2) {
   const rest = ' is clearly the better choice.';
-
-  if (option1.localeCompare(option2) < 0) {
+  
+  if (option1 < option2) {
     return option1 + rest;
   } else {
     return option2 + rest;
