@@ -1,9 +1,9 @@
 export const isArmstrongNumber = (number) => {
-  let result = 0;
+  const sum = 
+    [...number.toString()]
+    .reduce((acc, digit) => acc + digit ** number
+    .toString().length, 0);
   
-  for (let i = 0; i <= number.toString().length ; i++) {
-    result += Math.pow(number.toString().charAt(i), number.toString().length)
-  }
+  return sum === number;
 
-  return number === result
 };
