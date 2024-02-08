@@ -62,8 +62,6 @@ export function updateScore(scoreBoard, player, points) {
 export function applyMondayBonus(scoreBoard) {
   for(let i in scoreBoard) {
     scoreBoard[i] += 100;
-    console.log(scoreBoard[i]);
-    console.log(i);
   }
   
   return scoreBoard;
