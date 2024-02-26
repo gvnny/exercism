@@ -19,11 +19,7 @@ export function cookingStatus(timeLeft) {
     return 'You forgot to set the timer.';
 }
 
-export function preparationTime(layers, avarageTime) {
-    if (!avarageTime) {
-        avarageTime = 2;
-    }
-
+export function preparationTime(layers, avarageTime = 2) {
     return layers.length * avarageTime;
 }
 
