@@ -7,13 +7,7 @@
  * @returns {Visitor} the visitor that was created
  */
 export function createVisitor(name, age, ticketId) {
-  const Visitor = {
-    name: name,
-    age: age,
-    ticketId: ticketId
-  };
-  
-  return Visitor;
+  return { name, age, ticketId};
 }
 
 /**
@@ -23,12 +17,8 @@ export function createVisitor(name, age, ticketId) {
  * @returns {Visitor} the visitor without a ticket
  */
 export function revokeTicket(visitor) {
-  if (visitor.ticketId !== null) {
-    visitor.ticketId = null;
-    return visitor;
-  } else {
-    return visitor;
-  }
+  visitor.ticketId = null;
+  return visitor;
 }
 
 /**
@@ -59,11 +49,7 @@ export function ticketStatus(tickets, ticketId) {
  * @returns {string} ticket status
  */
 export function simpleTicketStatus(tickets, ticketId) {
-  if (tickets[ticketId] === null || tickets[ticketId] === undefined) {
-    return "invalid ticket !!!";
-  } else {
-    return tickets[ticketId]
-  }
+  return tickets[ticketId] ?? 'invalid ticket !!!'
 }
 
 /**
