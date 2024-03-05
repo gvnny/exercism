@@ -6,7 +6,7 @@
  * @returns {Card} the first card in the deck
  */
 export function getFirstCard(deck) {
-  const [firstCard, ...rest] = deck;
+  const [firstCard] = deck;
   
   return firstCard;
 }
@@ -19,7 +19,7 @@ export function getFirstCard(deck) {
  * @returns {Card} the second card in the deck
  */
 export function getSecondCard(deck) {
-  const [, secondCard, ...rest] = deck;
+  const [, secondCard] = deck;
   
   return secondCard;
 }
@@ -67,5 +67,5 @@ const FACE_CARDS = ['jack', 'queen', 'king'];
 export function insertFaceCards(deck) {
   const [firstCard, ...rest] = deck;
 
-  return [firstCard, 'jack', 'queen', 'king', ...rest];
+  return [firstCard, ...FACE_CARDS, ...rest];
 }
